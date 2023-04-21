@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D печать на заказ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+            nav ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            nav li {
+                margin-left: 20px;
+            }
+
+            nav a {
+                color: #333;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 18px;
+                padding: 10px;
+            }
+
+                nav a:hover {
+                    background-color: #333;
+                    color: #fff;
+                }
+
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 30px;
+        }
+
+        .item {
+            flex-basis: 30%;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+            padding: 20px;
+            text-align: center;
+        }
+
+            .item h2 {
+                font-size: 24px;
+                margin-top: 0;
+            }
+
+            .item p {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+
+            .item button {
+                background-color: #333;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-size: 18px;
+                cursor: pointer;
+            }
+
+                .item button:hover {
+                    background-color: #555;
+                }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>3D печать на заказ</h1>
+        <nav>
+            <ul>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="services">
+            <h2>Услуги</h2>
+            <p>Мы предлагаем 3D печать на заказ следующих объектов:</p>
+            <ul>
+                <li>Прототипы</li>
+                <li>Запчасти</li>
+                <li>Инструменты</li>
+                <li>Модели</li>
+                <li>Игрушки</li>
+                <li>И многое другое!</li>
+            </ul>
+            <p>Мы работаем с различными материалами, включая пластик, металл, дерево и керамику. Наша команда готова помочь вам воплотить в жизнь любые идеи и проекты!</p>
+        </section>
+
+        <section id="portfolio">
+            <h2>Портфолио</h2>
+            <div class="gallery">
+                <img src="images/print1.jpg" alt="3D печать на заказ">
+                <img src="images/print2.jpg" alt="3D печать на заказ">
+                <img src="images/print3.jpg" alt="3D печать на заказ">
+                <img src="images/print4.jpg" alt="3D печать на заказ">
+                <img src="images/print5.jpg" alt="3D печать на заказ">
+                <img src="images/print6.jpg" alt="3D печать на заказ">
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Контакты</h2>
+            <form>
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 3D Печать на Заказ. Все права защищены.</p>
+    </footer>
+
+    <script>// Получаем элементы на странице
+        const orderButtons = document.querySelectorAll('.item button');
+        const orderModal = document.querySelector('.modal');
+        const closeModalButton = document.querySelector('.close-modal');
+
+        // Обрабатываем клик по кнопке заказа
+        orderButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                orderModal.classList.add('show-modal');
+            });
+        });
+
+        // Обрабатываем клик по кнопке закрытия модального окна
+        closeModalButton.addEventListener('click', () => {
+            orderModal.classList.remove('show-modal');
+        });
+
+        // Обрабатываем клик по фону модального окна, чтобы закрыть его
+        window.addEventListener('click', event => {
+            if (event.target === orderModal) {
+                orderModal.classList.remove('show-modal');
+            }
+        });</script>
+</body>
+</html>
